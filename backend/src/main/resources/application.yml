@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: deckflow-ai
+  ai:
+    model:
+      chat: openai
+    openai:
+      api-key: ${DSAPIKEY:missing-ds-api-key}
+      base-url: ${DEEPSEEK_BASE_URL:https://api.deepseek.com}
+      chat:
+        options:
+          model: deepseek-v4-flash
+          temperature: 0.65
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      timeout: 3s
+
+server:
+  port: ${SERVER_PORT:8080}
+
+deckflow:
+  storage-path: ${PPT_STORAGE_PATH:../data/presentations}
